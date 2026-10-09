@@ -1,5 +1,7 @@
 {
-  "state": "no_sources",
-  "message": "No sources available: set ETSY_API_KEY / META_AD_LIBRARY_TOKEN secrets or add CSV exports to data/inbox/.",
-  "attempted_at_utc": "2026-10-09T05:01:38Z"
+  "state": "ok",
+  "message": "Run scout-20261009T050826 completed (SIMULATED).",
+  "attempted_at_utc": "2026-10-09T05:08:26Z",
+  "data_mode": "SIMULATED",
+  "source_failures": []
 }

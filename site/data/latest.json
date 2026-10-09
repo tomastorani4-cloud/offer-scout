@@ -1,0 +1,2730 @@
+{
+  "schema_version": "scout-2.0",
+  "run": {
+    "run_id": "scout-20261009T050826",
+    "generated_at_utc": "2026-10-09T05:08:26Z",
+    "data_mode": "SIMULATED",
+    "countries": [
+      "US",
+      "GB",
+      "CA",
+      "AU",
+      "BR",
+      "DE",
+      "FR",
+      "ES"
+    ],
+    "categories": [
+      "pets",
+      "education",
+      "non_clinical_wellness",
+      "small_business",
+      "creator_tools",
+      "planning_lifestyle"
+    ],
+    "sources_used": [
+      "synthetic"
+    ],
+    "source_failures": [],
+    "records_analyzed": 936,
+    "records_rejected": 212,
+    "rejection_reasons": {
+      "condition_specific_scope_out": 2,
+      "clinical_claim": 1,
+      "dietary_intervention_for_condition": 22,
+      "therapeutic_diet": 12,
+      "condition_adjacent": 22,
+      "supplement_or_weight_loss": 14,
+      "financial_promise": 19,
+      "gambling_adult": 7,
+      "piracy_hacking": 7,
+      "merged_duplicate": 141
+    },
+    "raw_records_collected": 936,
+    "finalists": 10
+  },
+  "market_summary": {
+    "pets": {
+      "patterns": [
+        "pet_business_kit: score 74, VALIDATE",
+        "pet_care_planner: score 65, VALIDATE",
+        "pet_health_record: score 62, WATCH"
+      ],
+      "promising_subcategories": [
+        "pet_business_kit",
+        "pet_care_planner"
+      ],
+      "saturation_signals": [
+        "low differentiation: 82% of listings are near-duplicates",
+        "low differentiation: 90% of listings are near-duplicates",
+        "low differentiation: 100% of listings are near-duplicates"
+      ],
+      "risks": []
+    },
+    "education": {
+      "patterns": [
+        "study_planner: score 63, WATCH",
+        "tutoring_business_kit: score 59, WATCH"
+      ],
+      "promising_subcategories": [],
+      "saturation_signals": [
+        "low differentiation: 93% of listings are near-duplicates",
+        "low differentiation: 71% of listings are near-duplicates"
+      ],
+      "risks": []
+    },
+    "non_clinical_wellness": {
+      "patterns": [
+        "caregiver_handover: score 64, WATCH",
+        "medical_info_organizer: score 62, WATCH",
+        "special_needs_family_organizer: score 53, WATCH",
+        "habit_tracker: score 28, REJECT"
+      ],
+      "promising_subcategories": [],
+      "saturation_signals": [
+        "low differentiation: 81% of listings are near-duplicates",
+        "low differentiation: 80% of listings are near-duplicates",
+        "low differentiation: 100% of listings are near-duplicates"
+      ],
+      "risks": [
+        "clinical_claim",
+        "condition_specific_scope_out"
+      ]
+    },
+    "small_business": {
+      "patterns": [
+        "freelancer_client_kit: score 72, VALIDATE",
+        "bookkeeping_spreadsheet: score 69, VALIDATE"
+      ],
+      "promising_subcategories": [
+        "freelancer_client_kit",
+        "bookkeeping_spreadsheet"
+      ],
+      "saturation_signals": [
+        "low differentiation: 64% of listings are near-duplicates",
+        "low differentiation: 97% of listings are near-duplicates"
+      ],
+      "risks": []
+    },
+    "creator_tools": {
+      "patterns": [
+        "social_content_planner: score 50, WATCH",
+        "notion_template: score 45, WATCH"
+      ],
+      "promising_subcategories": [],
+      "saturation_signals": [
+        "low differentiation: 97% of listings are near-duplicates",
+        "low differentiation: 86% of listings are near-duplicates"
+      ],
+      "risks": []
+    },
+    "planning_lifestyle": {
+      "patterns": [
+        "event_planner: score 67, VALIDATE",
+        "family_routine_planner: score 65, VALIDATE",
+        "budget_planner: score 62, WATCH",
+        "home_moving_organizer: score 58, WATCH"
+      ],
+      "promising_subcategories": [
+        "event_planner",
+        "family_routine_planner"
+      ],
+      "saturation_signals": [
+        "low differentiation: 92% of listings are near-duplicates",
+        "low differentiation: 90% of listings are near-duplicates",
+        "low differentiation: 92% of listings are near-duplicates",
+        "low differentiation: 76% of listings are near-duplicates"
+      ],
+      "risks": []
+    }
+  },
+  "markets": {
+    "coverage_records_by_market": {
+      "en": 436,
+      "pt": 129,
+      "de": 137,
+      "fr": 126,
+      "es": 108
+    },
+    "labels": {
+      "en": "EUA e mercados em inglês",
+      "pt": "Brasil",
+      "de": "Alemanha",
+      "fr": "França",
+      "es": "Espanha"
+    },
+    "regions": {
+      "en": "US",
+      "pt": "BR",
+      "de": "EUROPE",
+      "fr": "EUROPE",
+      "es": "EUROPE"
+    },
+    "notes": "Market evidence is grouped by query language. Etsy listings are global; country is not verified for them."
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "OPP-BAB6C190",
+      "category": "pets",
+      "subcategory": "pet_business_kit",
+      "target_customer": "New or small independent pet sitters and dog walkers",
+      "core_problem": "Looking professional and staying organized (contracts, intake, bookings, payments, client updates) without building systems from scratch",
+      "score": {
+        "total": 74,
+        "demand": 20,
+        "persistence": 20,
+        "quality": 23,
+        "viability": 18,
+        "differentiation": 8,
+        "penalties": [
+          {
+            "reason": "low differentiation: 82% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 45,
+        "analyst_prior_points": 44,
+        "notes": [
+          "reviews: 1088 in last 90d -> 8",
+          "distinct sellers: 33 -> 6",
+          "trend ratio last/first third: 1.16 -> 6",
+          "ad path: runtime 52d -> 15, variants -> 3",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "39 listings from 25 sellers; max reviews 1435; reliability F3",
+          "evidence_url": "https://example.invalid/sim/pet_business_kit/en/14",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "AD_PERSISTENCE",
+          "description": "3 ads from 3 advertisers; longest runtime 52 days",
+          "evidence_url": "https://example.invalid/sim-ad/pet_business_kit/0/0",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 3.35,
+        "maximum": 31.89,
+        "median": 16.42,
+        "sample_size": 39
+      },
+      "observed_offer_structure": {
+        "promise_category": "look professional and organize the business",
+        "mechanism_category": "editable spreadsheet plus printable forms bundle",
+        "formats": [
+          "PDF",
+          "Canva",
+          "Excel",
+          "printable",
+          "fillable PDF",
+          "Google Sheets"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [
+        "CA and AU localization",
+        "cat-only and multi-pet home-visit sitters",
+        "client communication bundled with back-office tracking"
+      ],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 17,
+        "records_total": 64,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "pt",
+          "target_label": "Brasil",
+          "target_region": "BR",
+          "currency": "BRL",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "17 sellers in EUA e mercados em inglês versus 2 seller(s) in Brasil despite 129 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 17,
+            "listings": 23,
+            "median_price_usd": 16.58,
+            "reviews_cumulative": 9343,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 2,
+            "median_price_usd": 25.34,
+            "reviews_cumulative": 36,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 129
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 16.58,
+            "currency": "BRL",
+            "converted_median": 92.11,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Brasil (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+            "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+            "LGPD se coletar dados de clientes",
+            "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "de",
+          "target_label": "Alemanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "COMPETITIVE",
+          "confidence": "LOW",
+          "rationale": "3 sellers already serve Alemanha; enter only with a clearly narrower sub-niche.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 17,
+            "listings": 23,
+            "median_price_usd": 16.58,
+            "reviews_cumulative": 9343,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 3,
+            "listings": 4,
+            "median_price_usd": 15.1,
+            "reviews_cumulative": 291,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 137
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 16.58,
+            "currency": "EUR",
+            "converted_median": 15.35,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Alemanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "COMPETITIVE",
+          "confidence": "LOW",
+          "rationale": "4 sellers already serve Espanha; enter only with a clearly narrower sub-niche.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 17,
+            "listings": 23,
+            "median_price_usd": 16.58,
+            "reviews_cumulative": 9343,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 4,
+            "listings": 6,
+            "median_price_usd": 16.42,
+            "reviews_cumulative": 683,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 16.58,
+            "currency": "EUR",
+            "converted_median": 15.35,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-EF11E615",
+      "category": "small_business",
+      "subcategory": "freelancer_client_kit",
+      "target_customer": "Freelancers and solo service providers",
+      "core_problem": "Looking professional with proposals, onboarding and invoicing without building documents from scratch",
+      "score": {
+        "total": 72,
+        "demand": 20,
+        "persistence": 20,
+        "quality": 23,
+        "viability": 18,
+        "differentiation": 6,
+        "penalties": [
+          {
+            "reason": "low differentiation: 64% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 45,
+        "analyst_prior_points": 42,
+        "notes": [
+          "reviews: 231 in last 90d -> 8",
+          "distinct sellers: 23 -> 6",
+          "trend ratio last/first third: 1.12 -> 6",
+          "ad path: runtime 34d -> 12, variants -> 3",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "25 listings from 15 sellers; max reviews 693; reliability F3",
+          "evidence_url": "https://example.invalid/sim/freelancer_client_kit/en/13",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "AD_PERSISTENCE",
+          "description": "3 ads from 3 advertisers; longest runtime 34 days",
+          "evidence_url": "https://example.invalid/sim-ad/freelancer_client_kit/0/0",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 7.07,
+        "maximum": 34.2,
+        "median": 23.17,
+        "sample_size": 25
+      },
+      "observed_offer_structure": {
+        "promise_category": "professional client operations",
+        "mechanism_category": "editable document and form bundle",
+        "formats": [
+          "PDF",
+          "fillable PDF",
+          "Excel",
+          "printable",
+          "Google Sheets",
+          "Canva"
+        ],
+        "deliverable_types": [
+          "proposal"
+        ],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 14,
+        "records_total": 47,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "de",
+          "target_label": "Alemanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "12 sellers in EUA e mercados em inglês versus 2 seller(s) in Alemanha despite 137 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 12,
+            "listings": 19,
+            "median_price_usd": 21.89,
+            "reviews_cumulative": 3675,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 3,
+            "median_price_usd": 20.96,
+            "reviews_cumulative": 54,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 137
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 21.89,
+            "currency": "EUR",
+            "converted_median": 20.27,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Alemanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "12 sellers in EUA e mercados em inglês versus 2 seller(s) in Espanha despite 108 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 12,
+            "listings": 19,
+            "median_price_usd": 21.89,
+            "reviews_cumulative": 3675,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 3,
+            "median_price_usd": 19.8,
+            "reviews_cumulative": 139,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 21.89,
+            "currency": "EUR",
+            "converted_median": 20.27,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "pt",
+          "target_label": "Brasil",
+          "target_region": "BR",
+          "currency": "BRL",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "12 sellers in EUA e mercados em inglês versus 2 seller(s) in Brasil despite 129 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 12,
+            "listings": 19,
+            "median_price_usd": 21.89,
+            "reviews_cumulative": 3675,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "AD_PERSISTENCE",
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 2,
+            "median_price_usd": 17.08,
+            "reviews_cumulative": 86,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 129
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 21.89,
+            "currency": "BRL",
+            "converted_median": 121.61,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Brasil (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+            "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+            "LGPD se coletar dados de clientes",
+            "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-9858AB1B",
+      "category": "small_business",
+      "subcategory": "bookkeeping_spreadsheet",
+      "target_customer": "Sole proprietors and small shops tracking income and expenses",
+      "core_problem": "Tracking income, expenses and invoices in one place without accounting software",
+      "score": {
+        "total": 69,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 22,
+        "viability": 17,
+        "differentiation": 7,
+        "penalties": [
+          {
+            "reason": "low differentiation: 97% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 43,
+        "analyst_prior_points": 41,
+        "notes": [
+          "reviews: 893 in last 90d -> 8",
+          "distinct sellers: 46 -> 6",
+          "trend ratio last/first third: 1.05 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "60 listings from 41 sellers; max reviews 710; reliability F3",
+          "evidence_url": "https://example.invalid/sim/bookkeeping_spreadsheet/pt/3",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 5.45,
+        "maximum": 29.53,
+        "median": 16.89,
+        "sample_size": 60
+      },
+      "observed_offer_structure": {
+        "promise_category": "financial record keeping",
+        "mechanism_category": "spreadsheet template",
+        "formats": [
+          "PDF",
+          "Canva",
+          "Excel",
+          "fillable PDF",
+          "printable",
+          "Google Sheets"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 17,
+        "records_total": 82,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-F602C723",
+      "category": "planning_lifestyle",
+      "subcategory": "event_planner",
+      "target_customer": "People planning weddings, parties and events",
+      "core_problem": "Keeping tasks, vendors and budgets organized for an event",
+      "score": {
+        "total": 67,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 22,
+        "viability": 18,
+        "differentiation": 4,
+        "penalties": [
+          {
+            "reason": "low differentiation: 92% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 43,
+        "analyst_prior_points": 39,
+        "notes": [
+          "reviews: 494 in last 90d -> 8",
+          "distinct sellers: 36 -> 6",
+          "trend ratio last/first third: 0.98 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "48 listings from 31 sellers; max reviews 566; reliability F3",
+          "evidence_url": "https://example.invalid/sim/event_planner/en/5",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 3.15,
+        "maximum": 17.73,
+        "median": 11.91,
+        "sample_size": 48
+      },
+      "observed_offer_structure": {
+        "promise_category": "event organization",
+        "mechanism_category": "printable planner or checklist",
+        "formats": [
+          "printable",
+          "PDF",
+          "Canva",
+          "Excel",
+          "Google Sheets",
+          "fillable PDF"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 6,
+        "records_total": 59,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-316996A8",
+      "category": "pets",
+      "subcategory": "pet_care_planner",
+      "target_customer": "Pet owners wanting routines and expense tracking",
+      "core_problem": "Keeping feeding, routine and expenses organized across pets",
+      "score": {
+        "total": 65,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 20,
+        "viability": 18,
+        "differentiation": 4,
+        "penalties": [
+          {
+            "reason": "low differentiation: 90% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 43,
+        "analyst_prior_points": 37,
+        "notes": [
+          "reviews: 268 in last 90d -> 8",
+          "distinct sellers: 28 -> 6",
+          "trend ratio last/first third: 1.03 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "42 listings from 23 sellers; max reviews 359; reliability F3",
+          "evidence_url": "https://example.invalid/sim/pet_care_planner/en/10",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 4.91,
+        "maximum": 17.83,
+        "median": 11.71,
+        "sample_size": 42
+      },
+      "observed_offer_structure": {
+        "promise_category": "pet routine organization",
+        "mechanism_category": "printable planner or spreadsheet",
+        "formats": [
+          "Excel",
+          "Canva",
+          "PDF",
+          "printable",
+          "Google Sheets"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 6,
+        "records_total": 53,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "de",
+          "target_label": "Alemanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "COMPETITIVE",
+          "confidence": "LOW",
+          "rationale": "4 sellers already serve Alemanha; enter only with a clearly narrower sub-niche.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 9,
+            "listings": 15,
+            "median_price_usd": 12.21,
+            "reviews_cumulative": 1652,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 4,
+            "listings": 8,
+            "median_price_usd": 10.69,
+            "reviews_cumulative": 629,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 137
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 12.21,
+            "currency": "EUR",
+            "converted_median": 11.31,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Alemanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "fr",
+          "target_label": "França",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "COMPETITIVE",
+          "confidence": "LOW",
+          "rationale": "4 sellers already serve França; enter only with a clearly narrower sub-niche.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 9,
+            "listings": 15,
+            "median_price_usd": 12.21,
+            "reviews_cumulative": 1652,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 4,
+            "listings": 7,
+            "median_price_usd": 12.91,
+            "reviews_cumulative": 321,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 126
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 12.21,
+            "currency": "EUR",
+            "converted_median": 11.31,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for França (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-E4AD29A3",
+      "category": "planning_lifestyle",
+      "subcategory": "family_routine_planner",
+      "target_customer": "Parents organizing household routines",
+      "core_problem": "Keeping school, chores and activities organized across a family",
+      "score": {
+        "total": 65,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 21,
+        "viability": 16,
+        "differentiation": 5,
+        "penalties": [
+          {
+            "reason": "low differentiation: 90% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 41,
+        "analyst_prior_points": 39,
+        "notes": [
+          "reviews: 237 in last 90d -> 8",
+          "distinct sellers: 29 -> 6",
+          "trend ratio last/first third: 0.98 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "39 listings from 24 sellers; max reviews 355; reliability F3",
+          "evidence_url": "https://example.invalid/sim/family_routine_planner/en/8",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 3.18,
+        "maximum": 11.79,
+        "median": 7.5,
+        "sample_size": 39
+      },
+      "observed_offer_structure": {
+        "promise_category": "family routine organization",
+        "mechanism_category": "printable planner",
+        "formats": [
+          "printable",
+          "PDF",
+          "Excel",
+          "Canva",
+          "fillable PDF",
+          "Google Sheets"
+        ],
+        "deliverable_types": [
+          "routine"
+        ],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 3,
+        "records_total": 47,
+        "required_human_review": true
+      },
+      "decision": "VALIDATE",
+      "decision_reason": "Score 65-79: validate cheaply before building.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-352D0A57",
+      "category": "non_clinical_wellness",
+      "subcategory": "caregiver_handover",
+      "target_customer": "Family caregivers managing care for an older relative",
+      "core_problem": "Keeping contacts, routines, appointments and emergency information in one place and handing over to another person",
+      "score": {
+        "total": 64,
+        "demand": 16,
+        "persistence": 17,
+        "quality": 22,
+        "viability": 17,
+        "differentiation": 7,
+        "penalties": [
+          {
+            "reason": "low differentiation: 81% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 38,
+        "analyst_prior_points": 41,
+        "notes": [
+          "reviews: 146 in last 90d -> 6",
+          "distinct sellers: 22 -> 6",
+          "trend ratio last/first third: 1.08 -> 4",
+          "marketplace path: base 12 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "27 listings from 17 sellers; max reviews 229; reliability F3",
+          "evidence_url": "https://example.invalid/sim/caregiver_handover/en/3",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 5.13,
+        "maximum": 24.21,
+        "median": 12.79,
+        "sample_size": 27
+      },
+      "observed_offer_structure": {
+        "promise_category": "organization and handover during care",
+        "mechanism_category": "printable binder or fillable PDF",
+        "formats": [
+          "printable",
+          "Canva",
+          "Excel",
+          "PDF",
+          "Google Sheets",
+          "fillable PDF"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [
+        "sandwich-generation caregivers",
+        "long-distance caregivers coordinating siblings",
+        "respite helper handover"
+      ],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "clinical_claim",
+          "condition_specific_scope_out"
+        ],
+        "records_rejected": 9,
+        "records_total": 41,
+        "required_human_review": true
+      },
+      "decision": "WATCH",
+      "decision_reason": "Score 40-64: evidence insufficient or market weak.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "8 sellers in EUA e mercados em inglês versus 2 seller(s) in Espanha despite 108 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 14,
+            "median_price_usd": 12.79,
+            "reviews_cumulative": 1300,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 2,
+            "median_price_usd": 7.16,
+            "reviews_cumulative": 38,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 12.79,
+            "currency": "EUR",
+            "converted_median": 11.84,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "fr",
+          "target_label": "França",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "8 sellers in EUA e mercados em inglês versus 2 seller(s) in França despite 126 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 14,
+            "median_price_usd": 12.79,
+            "reviews_cumulative": 1300,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 3,
+            "median_price_usd": 15.14,
+            "reviews_cumulative": 33,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 126
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 12.79,
+            "currency": "EUR",
+            "converted_median": 11.84,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for França (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "pt",
+          "target_label": "Brasil",
+          "target_region": "BR",
+          "currency": "BRL",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "8 sellers in EUA e mercados em inglês versus 2 seller(s) in Brasil despite 129 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 14,
+            "median_price_usd": 12.79,
+            "reviews_cumulative": 1300,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 2,
+            "median_price_usd": 9.83,
+            "reviews_cumulative": 23,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 129
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 12.79,
+            "currency": "BRL",
+            "converted_median": 71.06,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Brasil (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+            "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+            "LGPD se coletar dados de clientes",
+            "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-AAE718FD",
+      "category": "education",
+      "subcategory": "study_planner",
+      "target_customer": "Students organizing study and revision",
+      "core_problem": "Planning study time and tracking revision without overload",
+      "score": {
+        "total": 63,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 20,
+        "viability": 16,
+        "differentiation": 4,
+        "penalties": [
+          {
+            "reason": "low differentiation: 93% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 41,
+        "analyst_prior_points": 37,
+        "notes": [
+          "reviews: 621 in last 90d -> 8",
+          "distinct sellers: 38 -> 6",
+          "trend ratio last/first third: 0.97 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "56 listings from 33 sellers; max reviews 570; reliability F3",
+          "evidence_url": "https://example.invalid/sim/study_planner/en/5",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 4.05,
+        "maximum": 14.42,
+        "median": 8.3,
+        "sample_size": 56
+      },
+      "observed_offer_structure": {
+        "promise_category": "study organization",
+        "mechanism_category": "planner or dashboard template",
+        "formats": [
+          "Excel",
+          "PDF",
+          "Canva",
+          "printable",
+          "Google Sheets",
+          "fillable PDF"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 6,
+        "records_total": 67,
+        "required_human_review": true
+      },
+      "decision": "WATCH",
+      "decision_reason": "Score 40-64: evidence insufficient or market weak.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "GAP_SUPPORTED",
+          "confidence": "LOW",
+          "rationale": "13 sellers in EUA e mercados em inglês versus 2 seller(s) in Espanha despite 108 records collected there.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 13,
+            "listings": 20,
+            "median_price_usd": 8.13,
+            "reviews_cumulative": 3797,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 2,
+            "listings": 3,
+            "median_price_usd": 9.04,
+            "reviews_cumulative": 83,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 8.13,
+            "currency": "EUR",
+            "converted_median": 7.53,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "fr",
+          "target_label": "França",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "COMPETITIVE",
+          "confidence": "LOW",
+          "rationale": "4 sellers already serve França; enter only with a clearly narrower sub-niche.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 13,
+            "listings": 20,
+            "median_price_usd": 8.13,
+            "reviews_cumulative": 3797,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 4,
+            "listings": 7,
+            "median_price_usd": 7.6,
+            "reviews_cumulative": 258,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ],
+            "coverage_records": 126
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 8.13,
+            "currency": "EUR",
+            "converted_median": 7.53,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for França (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-B4CB34F6",
+      "category": "pets",
+      "subcategory": "pet_health_record",
+      "target_customer": "Dog and cat owners, new pet adopters",
+      "core_problem": "Keeping vaccination dates, vet visits and notes in one place",
+      "score": {
+        "total": 62,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 20,
+        "viability": 16,
+        "differentiation": 3,
+        "penalties": [
+          {
+            "reason": "low differentiation: 100% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 41,
+        "analyst_prior_points": 36,
+        "notes": [
+          "reviews: 350 in last 90d -> 8",
+          "distinct sellers: 21 -> 6",
+          "trend ratio last/first third: 0.98 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "25 listings from 20 sellers; max reviews 489; reliability F3",
+          "evidence_url": "https://example.invalid/sim/pet_health_record/en/17",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "1 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 3.09,
+        "maximum": 8.71,
+        "median": 5.96,
+        "sample_size": 25
+      },
+      "observed_offer_structure": {
+        "promise_category": "organization of pet records",
+        "mechanism_category": "printable PDF or spreadsheet",
+        "formats": [
+          "printable",
+          "Excel",
+          "Google Sheets",
+          "PDF"
+        ],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 5,
+        "records_total": 31,
+        "required_human_review": true
+      },
+      "decision": "WATCH",
+      "decision_reason": "Score 40-64: evidence insufficient or market weak.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "de",
+          "target_label": "Alemanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Alemanha's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 21,
+            "listings": 26,
+            "median_price_usd": 5.96,
+            "reviews_cumulative": 3932,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 137
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 5.96,
+            "currency": "EUR",
+            "converted_median": 5.52,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Alemanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Espanha's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 21,
+            "listings": 26,
+            "median_price_usd": 5.96,
+            "reviews_cumulative": 3932,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 5.96,
+            "currency": "EUR",
+            "converted_median": 5.52,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "fr",
+          "target_label": "França",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in França's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 21,
+            "listings": 26,
+            "median_price_usd": 5.96,
+            "reviews_cumulative": 3932,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 126
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 5.96,
+            "currency": "EUR",
+            "converted_median": 5.52,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for França (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "pt",
+          "target_label": "Brasil",
+          "target_region": "BR",
+          "currency": "BRL",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Brasil's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 21,
+            "listings": 26,
+            "median_price_usd": 5.96,
+            "reviews_cumulative": 3932,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 129
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 5.96,
+            "currency": "BRL",
+            "converted_median": 33.11,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Brasil (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+            "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+            "LGPD se coletar dados de clientes",
+            "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-9A25521D",
+      "category": "non_clinical_wellness",
+      "subcategory": "medical_info_organizer",
+      "target_customer": "Adults organizing appointments and information for themselves or family",
+      "core_problem": "Keeping appointment notes and contact information organized to share with professionals",
+      "score": {
+        "total": 62,
+        "demand": 12,
+        "persistence": 11,
+        "quality": 19,
+        "viability": 17,
+        "differentiation": 3,
+        "penalties": [],
+        "data_driven_points": 28,
+        "analyst_prior_points": 34,
+        "notes": [
+          "reviews: 42 in last 90d -> 4",
+          "distinct sellers: 8 -> 4",
+          "trend ratio last/first third: 0.98 -> 4",
+          "marketplace path: base 8 + multi-seller 3"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "9 listings from 7 sellers; max reviews 134; reliability F3",
+          "evidence_url": "https://example.invalid/sim/medical_info_organizer/en/5",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "1 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 5.32,
+        "maximum": 14.03,
+        "median": 11.29,
+        "sample_size": 9
+      },
+      "observed_offer_structure": {
+        "promise_category": "organization of appointments and information",
+        "mechanism_category": "printable binder",
+        "formats": [
+          "printable",
+          "PDF",
+          "Canva",
+          "Excel",
+          "Google Sheets"
+        ],
+        "deliverable_types": [],
+        "cta_types": [
+          "instant download"
+        ],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 1,
+        "records_total": 11,
+        "required_human_review": true
+      },
+      "decision": "WATCH",
+      "decision_reason": "Score 40-64: evidence insufficient or market weak.",
+      "handoff_to_modeler": false,
+      "market_ideas": [
+        {
+          "target_market": "de",
+          "target_label": "Alemanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Alemanha's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 10,
+            "median_price_usd": 11.29,
+            "reviews_cumulative": 637,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 137
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 11.29,
+            "currency": "EUR",
+            "converted_median": 10.45,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Alemanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "es",
+          "target_label": "Espanha",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Espanha's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 10,
+            "median_price_usd": 11.29,
+            "reviews_cumulative": 637,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 108
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 11.29,
+            "currency": "EUR",
+            "converted_median": 10.45,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Espanha (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "fr",
+          "target_label": "França",
+          "target_region": "EUROPE",
+          "currency": "EUR",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in França's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 10,
+            "median_price_usd": 11.29,
+            "reviews_cumulative": 637,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 126
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 11.29,
+            "currency": "EUR",
+            "converted_median": 10.45,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for França (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+            "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+            "GDPR para dados de clientes",
+            "Idiomas: um produto por idioma (alemão, francês, espanhol)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        },
+        {
+          "target_market": "pt",
+          "target_label": "Brasil",
+          "target_region": "BR",
+          "currency": "BRL",
+          "source_market": "en",
+          "source_label": "EUA e mercados em inglês",
+          "status": "UNVERIFIED",
+          "confidence": "LOW",
+          "rationale": "This niche has no search queries in Brasil's language yet, so the absence of listings means nothing. Add translated queries in config/localization.yaml and rerun.",
+          "caveat": "Few or no competing listings can mean low demand, not opportunity. Check local search interest and buyer questions before building.",
+          "source_evidence": {
+            "sellers": 8,
+            "listings": 10,
+            "median_price_usd": 11.29,
+            "reviews_cumulative": 637,
+            "country_verified_share": 1.0,
+            "signal_types": [
+              "REVIEW_VELOCITY",
+              "SEARCH_TREND"
+            ]
+          },
+          "target_evidence": {
+            "sellers": 0,
+            "listings": 0,
+            "median_price_usd": null,
+            "reviews_cumulative": 0,
+            "country_verified_share": null,
+            "signal_types": [],
+            "coverage_records": 129
+          },
+          "price_hypothesis": {
+            "observed_source_median_usd": 11.29,
+            "currency": "BRL",
+            "converted_median": 62.72,
+            "note": "Currency conversion only (placeholder FX). Purchasing power and local price anchors differ; validate locally."
+          },
+          "adaptation": [
+            "Localize for Brasil (examples, formats, tone), not a literal translation",
+            "Native-speaker review of every customer-facing text"
+          ],
+          "regional_notes": [
+            "Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+            "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+            "LGPD se coletar dados de clientes",
+            "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"
+          ],
+          "requires_human_review": true,
+          "simulated": true,
+          "next_steps": [
+            "Check local demand (search interest export for the target country) before building",
+            "Read local competitor reviews for objections",
+            "Approve the localized offer brief (Agent 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "opportunity_id": "OPP-6959F961",
+      "category": "non_clinical_wellness",
+      "subcategory": "habit_tracker",
+      "target_customer": "General consumers building routines",
+      "core_problem": "Building routines and staying organized",
+      "score": {
+        "total": 28,
+        "demand": 18,
+        "persistence": 20,
+        "quality": 16,
+        "viability": 13,
+        "differentiation": 1,
+        "penalties": [
+          {
+            "reason": "median price $4.37 too low to fund ads",
+            "points": -25
+          },
+          {
+            "reason": "low differentiation: 100% of listings are near-duplicates",
+            "points": -15
+          }
+        ],
+        "data_driven_points": 39,
+        "analyst_prior_points": 29,
+        "notes": [
+          "reviews: 943 in last 90d -> 8",
+          "distinct sellers: 59 -> 6",
+          "trend ratio last/first third: 0.99 -> 4",
+          "marketplace path: base 15 + multi-seller 5"
+        ]
+      },
+      "evidence_confidence": "LOW",
+      "signals": [
+        {
+          "signal_type": "REVIEW_VELOCITY",
+          "description": "71 listings from 54 sellers; max reviews 805; reliability F3",
+          "evidence_url": "https://example.invalid/sim/habit_tracker/en/11",
+          "captured_at": "2026-10-09T05:08:26Z"
+        },
+        {
+          "signal_type": "SEARCH_TREND",
+          "description": "5 trend series (12+ points) available",
+          "evidence_url": null,
+          "captured_at": "2026-10-09T05:08:26Z"
+        }
+      ],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions",
+        "No ad data (AD_PERSISTENCE missing): ad persistence not evaluated"
+      ],
+      "observed_price_range_usd": {
+        "minimum": 1.13,
+        "maximum": 7.96,
+        "median": 4.37,
+        "sample_size": 71
+      },
+      "observed_offer_structure": {
+        "promise_category": "routine organization",
+        "mechanism_category": "planner or tracker",
+        "formats": [
+          "PDF",
+          "Excel",
+          "printable",
+          "Google Sheets"
+        ],
+        "deliverable_types": [
+          "habit"
+        ],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "none",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [],
+        "records_rejected": 19,
+        "records_total": 95,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Score below 40.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-A4F7BB38",
+      "category": "blocked",
+      "subcategory": "autism_nutrition_intervention",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Dietary or supplement interventions for a health condition are clinical/nutritional guidance and unproven-claim territory. Out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "condition_adjacent",
+          "dietary_intervention_for_condition",
+          "therapeutic_diet"
+        ],
+        "records_rejected": 22,
+        "records_total": 22,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Dietary or supplement interventions for a health condition are clinical/nutritional guidance and unproven-claim territory. Out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-84E360BE",
+      "category": "blocked",
+      "subcategory": "supplement_protocols",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Supplements with health claims are out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "supplement_or_weight_loss"
+        ],
+        "records_rejected": 7,
+        "records_total": 7,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Supplements with health claims are out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-872840F8",
+      "category": "blocked",
+      "subcategory": "weight_loss_plans",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Weight-loss products are out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "supplement_or_weight_loss"
+        ],
+        "records_rejected": 7,
+        "records_total": 7,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Weight-loss products are out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-8F377C70",
+      "category": "blocked",
+      "subcategory": "get_rich_financial_claims",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Income, trading or investment promises are financial-claim territory. Out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "financial_promise"
+        ],
+        "records_rejected": 19,
+        "records_total": 19,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Income, trading or investment promises are financial-claim territory. Out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-7A5744E3",
+      "category": "blocked",
+      "subcategory": "gambling_adult",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Gambling and adult content are out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "gambling_adult"
+        ],
+        "records_rejected": 7,
+        "records_total": 7,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Gambling and adult content are out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    },
+    {
+      "opportunity_id": "OPP-B2347B0E",
+      "category": "blocked",
+      "subcategory": "piracy_hacking",
+      "target_customer": null,
+      "core_problem": null,
+      "score": {
+        "total": 0,
+        "demand": 0,
+        "persistence": 0,
+        "quality": 0,
+        "viability": 0,
+        "differentiation": 0,
+        "penalties": [
+          {
+            "reason": "prohibited niche: Piracy and hacking tools are out of scope.",
+            "points": -100
+          }
+        ],
+        "data_driven_points": 0,
+        "analyst_prior_points": 0,
+        "notes": []
+      },
+      "evidence_confidence": "LOW",
+      "signals": [],
+      "evidence_limitations": [
+        "SIMULATED data: not valid for decisions"
+      ],
+      "observed_price_range_usd": {
+        "minimum": null,
+        "maximum": null,
+        "median": null,
+        "sample_size": 0
+      },
+      "observed_offer_structure": {
+        "promise_category": null,
+        "mechanism_category": null,
+        "formats": [],
+        "deliverable_types": [],
+        "cta_types": [],
+        "funnel_structure": null
+      },
+      "recurring_objections": [],
+      "market_gaps": [],
+      "compliance": {
+        "health_risk": "high",
+        "veterinary_risk": "none",
+        "academic_integrity_risk": "none",
+        "ip_risk": "low",
+        "flags": [
+          "piracy_hacking"
+        ],
+        "records_rejected": 7,
+        "records_total": 7,
+        "required_human_review": true
+      },
+      "decision": "REJECT",
+      "decision_reason": "Prohibited niche (see compliance flags). Blocked: Piracy and hacking tools are out of scope.",
+      "handoff_to_modeler": false,
+      "market_ideas": []
+    }
+  ],
+  "recommended_next_action": {
+    "selected_opportunity_id": null,
+    "reason": "SIMULATED run: no action recommended; validate the pipeline only.",
+    "actions_before_creation": [
+      "Collect dated reviews and ad persistence for the top listings",
+      "Review compliance flags and obtain human approval"
+    ],
+    "actions_before_publication": [
+      "Human approval of offer, claims and disclaimers",
+      "Originality test in Agent 2"
+    ],
+    "human_approval_required": true
+  }
+}

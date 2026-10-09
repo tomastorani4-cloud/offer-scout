@@ -1,0 +1,97 @@
+[
+  {
+    "run_id": "scout-20261009T050826",
+    "generated_at_utc": "2026-10-09T05:08:26Z",
+    "data_mode": "SIMULATED",
+    "sources_used": [
+      "synthetic"
+    ],
+    "opportunities": {
+      "pet_business_kit": {
+        "score": 74,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "freelancer_client_kit": {
+        "score": 72,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "bookkeeping_spreadsheet": {
+        "score": 69,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "event_planner": {
+        "score": 67,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "pet_care_planner": {
+        "score": 65,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "family_routine_planner": {
+        "score": 65,
+        "decision": "VALIDATE",
+        "confidence": "LOW"
+      },
+      "caregiver_handover": {
+        "score": 64,
+        "decision": "WATCH",
+        "confidence": "LOW"
+      },
+      "study_planner": {
+        "score": 63,
+        "decision": "WATCH",
+        "confidence": "LOW"
+      },
+      "pet_health_record": {
+        "score": 62,
+        "decision": "WATCH",
+        "confidence": "LOW"
+      },
+      "medical_info_organizer": {
+        "score": 62,
+        "decision": "WATCH",
+        "confidence": "LOW"
+      },
+      "habit_tracker": {
+        "score": 28,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "autism_nutrition_intervention": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "supplement_protocols": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "weight_loss_plans": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "get_rich_financial_claims": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "gambling_adult": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      },
+      "piracy_hacking": {
+        "score": 0,
+        "decision": "REJECT",
+        "confidence": "LOW"
+      }
+    }
+  }
+]
