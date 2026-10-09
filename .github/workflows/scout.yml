@@ -1,0 +1,56 @@
+ame: Offer Scout
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"        # every day 09:00 UTC (06:00 Sao Paulo)
+  workflow_dispatch:            # manual "Run workflow" button
+    inputs:
+      simulate:
+        description: "Test with FAKE data (never use for decisions)"
+        type: boolean
+        default: false
+  push:
+    paths: ["data/inbox/**"]    # new CSV exports dropped in the inbox trigger a run
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: scout
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pyyaml requests && pip install -e . --no-deps
+      - name: Tests (fail fast if the code is broken)
+        run: PYTHONPATH=src:tests python -m unittest discover -s tests
+      - name: Run scout
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          META_AD_LIBRARY_TOKEN: ${{ secrets.META_AD_LIBRARY_TOKEN }}
+        run: python -m offer_scout.cli run ${{ github.event.inputs.simulate == 'true' && '--simulate' || '--auto' }} --dashboard-dir site/data
+      - name: Save results (keeps history between runs)
+        run: |
+          git config user.name "offer-scout-bot"
+          git config user.email "offer-scout-bot@users.noreply.github.com"
+          git add site/data
+          git diff --cached --quiet || git commit -m "scout: update dashboard data [skip ci]"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
