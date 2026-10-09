@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef2f4">
+<title>Offer Scout</title>
+<style>
+:root{--bg:#eef2f4;--card:#fff;--ink:#14212b;--mut:#5a6b78;--line:#d5dde2;--acc:#0e7c86;--ok:#2b7a4b;--warn:#a86a10;--bad:#b23a48;--c1:#0b5d66;--c2:#1b8a94;--c3:#4fb0b5;--c4:#8bd0d0;--c5:#c3e6e4}
+@media (prefers-color-scheme:dark){:root{--bg:#0d161c;--card:#15222b;--ink:#e6eef2;--mut:#93a5b1;--line:#263642;--acc:#4fc3cc;--ok:#6fcf97;--warn:#e0a850;--bad:#ef7b88;--c1:#2aa3ad;--c2:#3fb9c2;--c3:#6fcfd3;--c4:#9fdfdf;--c5:#cdeeed}}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+header{position:sticky;top:0;background:var(--bg);padding:calc(12px + env(safe-area-inset-top,0px)) 16px 10px;z-index:5;border-bottom:1px solid var(--line)}
+h1{font-size:22px;margin:0;letter-spacing:-.01em}.sub{color:var(--mut);font-size:13px;margin-top:2px}
+main{max-width:680px;margin:0 auto;padding:12px 16px}
+.box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:15px}
+.box.warn{border-left-color:var(--warn)}.box.bad{border-left-color:var(--bad)}.box.ok{border-left-color:var(--ok)}
+.meta{color:var(--mut);font-size:13px;margin-top:3px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-size:14px;font-weight:600;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+details.opp{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{list-style:none;padding:14px;cursor:pointer;min-height:44px}summary::-webkit-details-marker{display:none}
+.row{display:flex;justify-content:space-between;gap:10px}.name{font-weight:700;line-height:1.25}
+.score{font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:2px 8px;border:1px solid currentColor;margin:8px 6px 0 0}
+.t-v{color:var(--ok)}.t-w{color:var(--warn)}.t-r{color:var(--bad)}.t-n{color:var(--mut)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line);margin-top:12px}.bar i{display:block;height:100%}
+.body{padding:0 14px 14px;border-top:1px solid var(--line)}.body h3{font-size:14px;margin:14px 0 6px}
+.kv{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:14px}
+.sw{width:12px;height:12px;border-radius:3px}.num{font-variant-numeric:tabular-nums;font-weight:600}.neg{color:var(--bad)}
+ul{margin:0;padding-left:18px;font-size:14px}li{margin:3px 0}a{color:var(--acc);overflow-wrap:anywhere}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:6}
+nav button{flex:1;background:none;border:0;color:var(--mut);font:inherit;font-size:13px;font-weight:600;min-height:48px;border-radius:10px}
+nav button[aria-selected="true"]{color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent)}
+.agent{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header><h1>Offer Scout</h1><div class="sub" id="sub">Carregando…</div></header>
+<main>
+<section id="v-opp"><div id="banners"></div><div class="chips" id="chips" role="group" aria-label="Filtrar por decisão"></div><div id="list"></div></section>
+<section id="v-mkt" hidden><div id="mkt"></div></section>
+<section id="v-hist" hidden><div id="hist"></div></section>
+<section id="v-pipe" hidden>
+ <div class="agent"><b>1. Scout</b> <span class="tag t-v">No ar</span><div class="meta">Varredura agendada na nuvem. Este painel lê o resultado da última execução.</div></div>
+ <div class="agent"><b>2. Modeler</b> <span class="tag t-n">Próximo</span><div class="meta">Recebe oportunidades VALIDATE/PRIORITY de dados reais.</div></div>
+ <div class="agent"><b>3. Publisher</b> <span class="tag t-n">Aguarda</span><div class="meta">Só rascunha. Publicar exige aprovação humana.</div></div>
+ <div class="agent"><b>4. Scaler</b> <span class="tag t-n">Aguarda</span><div class="meta">Precisa de vendas e métricas reais.</div></div>
+</section>
+</main>
+<nav role="tablist" aria-label="Seções">
+ <button role="tab" data-t="opp" aria-selected="true">Oportunidades</button>
+ <button role="tab" data-t="mkt" aria-selected="false">Mercados</button>
+ <button role="tab" data-t="hist" aria-selected="false">Histórico</button>
+ <button role="tab" data-t="pipe" aria-selected="false">Pipeline</button>
+</nav>
+<script>
+var S={latest:null,hist:[],status:null,filt:"ALL",error:null};
+var DEC={VALIDATE:["Validar","t-v"],PRIORITY:["Prioridade","t-v"],WATCH:["Observar","t-w"],REJECT:["Rejeitar","t-r"]};
+var COMP=[["demand","Demanda (25)"],["persistence","Persistência (20)"],["quality","Qualidade (25)"],["viability","Viabilidade (20)"],["differentiation","Diferenciação (10)"]];
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function li(a){return a&&a.length?"<ul>"+a.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul>":"<div class='meta'>Nada identificado.</div>"}
+function fmt(iso){if(!iso)return"—";var d=new Date(iso);return isNaN(d)?esc(iso):d.toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"})}
+function name(sub){return sub.replace(/_/g," ")}
+function get(u){return fetch(u+"?t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(u+" "+r.status);return r.json()})}
+function load(){
+  var p=[get("data/status.json").catch(function(){return null}),get("data/latest.json").catch(function(){return null}),get("data/history.json").catch(function(){return[]})];
+  Promise.all(p).then(function(r){S.status=r[0];S.latest=r[1];S.hist=r[2]||[];render()}).catch(function(e){S.error=String(e);render()});
+}
+function banners(){
+  var b=[],st=S.status,L=S.latest;
+  if(!st&&!L)return"<div class='box warn'><b>Ainda não há dados.</b> Rode a automação uma vez (aba Actions do GitHub). O painel mostra o resultado assim que existir.</div>";
+  if(st&&st.state==="no_sources")b.push("<div class='box warn'><b>Sem fontes configuradas.</b> "+esc(st.message)+"<div class='meta'>Última tentativa: "+fmt(st.attempted_at_utc)+"</div></div>");
+  if(st&&st.state==="error")b.push("<div class='box bad'><b>A última execução falhou.</b> "+esc(st.message)+"<div class='meta'>"+fmt(st.attempted_at_utc)+". Os números abaixo são da execução anterior.</div></div>");
+  if(L&&L.run.data_mode==="SIMULATED")b.push("<div class='box bad'><b>Dados SIMULADOS.</b> Fictícios, só para testar o painel. Não use para decidir nada.</div>");
+  if(L){
+    var v=L.opportunities.filter(function(o){return o.decision==="VALIDATE"||o.decision==="PRIORITY"}).length;
+    b.push("<div class='box ok'><b>"+v+" oportunidade"+(v===1?"":"s")+" para validar</b> na execução de "+fmt(L.run.generated_at_utc)+".<div class='meta'>Fontes: "+esc(L.run.sources_used.join(", ")||"nenhuma")+". Registros: "+L.run.records_analyzed+" analisados, "+L.run.records_rejected+" rejeitados.</div></div>");
+    if(L.run.source_failures&&L.run.source_failures.length)b.push("<div class='box warn'><b>Limitações das fontes</b>"+li(L.run.source_failures)+"</div>");
+  }
+  return b.join("");
+}
+function card(o,i){
+  var d=DEC[o.decision]||["?","t-n"],sc=o.score,gross=0;
+  var segs=COMP.map(function(c,k){gross+=sc[c[0]];return"<i style='width:"+sc[c[0]]+"%;background:var(--c"+(k+1)+")'></i>"}).join("");
+  var rows=COMP.map(function(c,k){return"<span class='sw' style='background:var(--c"+(k+1)+")'></span><span>"+c[1]+"</span><span class='num'>+"+sc[c[0]]+"</span>"}).join("");
+  var pr=(sc.penalties||[]).map(function(p){return"<span class='sw' style='background:var(--bad)'></span><span>"+esc(p.reason)+"</span><span class='num neg'>"+p.points+"</span>"}).join("");
+  var pb=o.observed_price_range_usd||{};
+  var price=pb.sample_size?"US$ "+pb.minimum+" a "+pb.maximum+(pb.median?" (mediana "+pb.median+", n="+pb.sample_size+")":""):"sem preços observados";
+  var sig=(o.signals||[]).map(function(s){var u=/^https?:\/\//.test(s.evidence_url||"")?" <a href='"+esc(s.evidence_url)+"' target='_blank' rel='noopener noreferrer'>fonte</a>":"";return"<li>"+esc(s.signal_type)+": "+esc(s.description)+u+"</li>"}).join("");
+  return"<details class='opp'"+(i===0?" open":"")+"><summary><div class='row'><div><div class='name'>"+esc(name(o.subcategory))+"</div><div class='meta'>"+esc(o.target_customer)+"</div></div><div class='score' aria-label='Nota "+sc.total+" de 100'>"+sc.total+"</div></div>"
+   +"<span class='tag "+d[1]+"'>"+d[0]+"</span><span class='tag t-n'>Confiança "+esc(o.evidence_confidence.toLowerCase())+"</span>"
+   +"<div class='bar' role='img' aria-label='Composição da nota'>"+segs+"</div></summary>"
+   +"<div class='body'><h3>Por que esta decisão</h3><div>"+esc(o.decision_reason)+"</div>"
+   +"<h3>Composição da nota</h3><div class='kv'>"+rows+pr+"</div><div class='meta'>"+sc.data_driven_points+" pontos vêm de dados observados; "+sc.analyst_prior_points+" vêm de julgamento configurado.</div>"
+   +"<h3>Problema</h3><div>"+esc(o.core_problem)+"</div><h3>Preços observados</h3><div>"+price+"</div>"
+   +"<h3>Sinais</h3>"+(sig?"<ul>"+sig+"</ul>":"<div class='meta'>Nenhum sinal.</div>")
+   +"<h3>Ideias de outros mercados</h3>"+((o.market_ideas||[]).filter(function(i){return i.status==="GAP_SUPPORTED"}).length?li((o.market_ideas||[]).filter(function(i){return i.status==="GAP_SUPPORTED"}).map(function(i){return i.target_label+": "+i.rationale})):"<div class='meta'>Nenhuma lacuna com evidência. Veja a aba Mercados.</div>")
+   +"<h3>Lacunas de mercado</h3>"+li(o.market_gaps)+"<h3>Limitações da evidência</h3>"+li(o.evidence_limitations)
+   +"<h3>Conformidade</h3>"+li((o.compliance.flags||[]).concat(["Revisão humana obrigatória"]))+"</div></details>";
+}
+function renderList(){
+  var L=S.latest;if(!L){document.getElementById("list").innerHTML="";document.getElementById("chips").innerHTML="";return}
+  var labels=[["ALL","Todas"],["VALIDATE","Validar"],["WATCH","Observar"],["REJECT","Rejeitar"]];
+  document.getElementById("chips").innerHTML=labels.map(function(l){return"<button class='chip' data-f='"+l[0]+"' aria-pressed='"+(S.filt===l[0])+"'>"+l[1]+"</button>"}).join("");
+  var list=L.opportunities.filter(function(o){return S.filt==="ALL"||o.decision===S.filt||(S.filt==="VALIDATE"&&o.decision==="PRIORITY")});
+  document.getElementById("list").innerHTML=list.length?list.map(card).join(""):"<div class='box'>Nenhuma oportunidade neste filtro.</div>";
+}
+var ST={GAP_SUPPORTED:["Lacuna com evidência","t-v"],UNVERIFIED:["Sem verificação","t-w"],COMPETITIVE:["Já concorrido","t-n"]};
+var RG={BR:"Brasil",US:"EUA e mercados em inglês",EUROPE:"Europa"};
+function ideaHtml(i,showNiche){
+  var st=ST[i.status]||[i.status,"t-n"],ph=i.price_hypothesis;
+  return"<div class='box'><div><b>"+esc(showNiche?name(showNiche)+" → ":"")+esc(i.target_label)+"</b></div>"
+   +"<span class='tag "+st[1]+"'>"+st[0]+"</span><span class='tag t-n'>Confiança "+esc(i.confidence.toLowerCase())+"</span>"+(i.simulated?"<span class='tag t-r'>Simulado</span>":"")
+   +"<div style='margin-top:8px'>"+esc(i.rationale)+"</div>"
+   +(ph?"<div class='meta'>Preço observado na origem: US$ "+ph.observed_source_median_usd+" (≈ "+esc(ph.currency)+" "+ph.converted_median+" só por câmbio; valide localmente).</div>":"")
+   +"<div class='meta'>"+esc(i.caveat)+"</div>"
+   +"<details><summary style='padding:8px 0;min-height:44px'>Adaptação, avisos e próximos passos</summary>"
+   +"<h3>Adaptar</h3>"+li(i.adaptation)+"<h3>Avisos locais (confirme com contador ou advogado)</h3>"+li(i.regional_notes)+"<h3>Próximos passos</h3>"+li(i.next_steps)+"</details></div>";
+}
+function renderMkt(){
+  var L=S.latest,el=document.getElementById("mkt");
+  if(!L||!L.markets){el.innerHTML="<div class='box'>As ideias por mercado aparecem após a primeira execução.</div>";return}
+  var cov=L.markets.coverage_records_by_market,lab=L.markets.labels;
+  var out="<div class='box'><b>Cobertura desta execução</b><ul>"+Object.keys(cov).map(function(k){return"<li>"+esc(lab[k])+": "+cov[k]+" registros"+(cov[k]<20?" (insuficiente para afirmar lacunas)":"")+"</li>"}).join("")+"</ul><div class='meta'>"+esc(L.markets.notes)+"</div></div>";
+  var byRegion={};
+  L.opportunities.forEach(function(o){(o.market_ideas||[]).forEach(function(i){(byRegion[i.target_region]=byRegion[i.target_region]||[]).push([o.subcategory,i])})});
+  var order={GAP_SUPPORTED:0,UNVERIFIED:1,COMPETITIVE:2};
+  ["BR","EUROPE","US"].forEach(function(r){
+    var arr=(byRegion[r]||[]).sort(function(a,b){return order[a[1].status]-order[b[1].status]});
+    out+="<h3 style='margin:16px 0 8px'>"+RG[r]+"</h3>"+(arr.length?arr.map(function(x){return ideaHtml(x[1],x[0])}).join(""):"<div class='box'>Nenhuma ideia nesta região nesta execução.</div>");
+  });
+  el.innerHTML=out;
+}
+function renderHist(){
+  var h=S.hist;if(!h.length){document.getElementById("hist").innerHTML="<div class='box'>O histórico aparece a partir da primeira execução.</div>";return}
+  var out=h.slice().reverse().map(function(r,i,arr){
+    var prev=arr[i+1];
+    var lines=Object.keys(r.opportunities).map(function(k){var o=r.opportunities[k],d="";
+      if(prev&&prev.opportunities[k]){var x=o.score-prev.opportunities[k].score;d=x?" ("+(x>0?"+":"")+x+")":" (=)"}
+      return"<li>"+esc(name(k))+": "+o.score+d+" · "+esc(o.decision)+"</li>"}).join("");
+    return"<div class='box"+(r.data_mode==="SIMULATED"?" bad":"")+"'><b>"+fmt(r.generated_at_utc)+"</b> <span class='meta'>"+esc(r.data_mode)+" · "+esc(r.sources_used.join(", "))+"</span><ul>"+lines+"</ul></div>"}).join("");
+  document.getElementById("hist").innerHTML=out;
+}
+function render(){
+  var L=S.latest;
+  document.getElementById("sub").textContent=S.error?"Não foi possível carregar os dados":(L?"Atualizado em "+fmt(L.run.generated_at_utc):"Aguardando a primeira execução");
+  document.getElementById("banners").innerHTML=(S.error?"<div class='box bad'><b>Erro ao carregar:</b> "+esc(S.error)+"</div>":"")+banners();
+  renderList();renderMkt();renderHist();
+}
+document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;S.filt=b.dataset.f;renderList()});
+document.querySelector("nav").addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(!b)return;
+  ["opp","mkt","hist","pipe"].forEach(function(k){document.getElementById("v-"+k).hidden=k!==b.dataset.t});
+  document.querySelectorAll("nav button").forEach(function(x){x.setAttribute("aria-selected",x===b)});window.scrollTo(0,0)});
+load();setInterval(load,300000);
+document.addEventListener("visibilitychange",function(){if(!document.hidden)load()});
+</script>
+</body>
+</html>

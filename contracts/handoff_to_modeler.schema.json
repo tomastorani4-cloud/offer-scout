@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scout -> Modeler handoff",
+  "type": "object",
+  "required": ["opportunity_id", "category", "subcategory", "target_customer", "core_problem",
+               "observed_price_band_usd", "market_gaps", "evidence_confidence", "score", "compliance",
+               "evidence_urls", "constraints_for_modeler", "human_approval_required"],
+  "properties": {
+    "opportunity_id": {"type": "string"},
+    "category": {"enum": ["pets", "education", "non_clinical_wellness"]},
+    "subcategory": {"type": "string"},
+    "target_customer": {"type": "string"},
+    "core_problem": {"type": "string"},
+    "promise_category": {"type": "string"},
+    "mechanism_category": {"type": "string"},
+    "observed_formats": {"type": "array", "items": {"type": "string"}},
+    "observed_deliverable_types": {"type": "array", "items": {"type": "string"}},
+    "observed_price_band_usd": {"type": "object", "properties": {
+      "minimum": {"type": ["number", "null"]}, "maximum": {"type": ["number", "null"]},
+      "median": {"type": ["number", "null"]}, "sample_size": {"type": "integer"}}},
+    "market_gaps": {"type": "array", "items": {"type": "string"}},
+    "evidence_confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+    "score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "compliance": {"type": "object"},
+    "market_ideas": {"type": "array", "items": {"type": "object"}},
+    "evidence_urls": {"type": "array", "items": {"type": "string"}},
+    "constraints_for_modeler": {"type": "array", "items": {"type": "string"}},
+    "human_approval_required": {"const": true}
+  },
+  "additionalProperties": false
+}

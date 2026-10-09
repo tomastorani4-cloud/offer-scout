@@ -1,0 +1,146 @@
+# Queries and classification terms per language (pt = Brazil, de/fr/es = Europe).
+# Best-effort translations: a native speaker should review before relying on them.
+subcategories:
+  pet_business_kit:
+    queries_i18n:
+      pt: ["planilha pet sitter", "modelo contrato passeador de cães", "kit para negócio de passeio com cães"]
+      es: ["plantilla cuidador de mascotas", "plantilla paseador de perros", "contrato cuidado de mascotas plantilla"]
+      de: ["Hundesitter Vorlage", "Hundesitting Vertrag Vorlage", "Gassi Service Vorlage"]
+      fr: ["modèle pet sitter", "contrat garde d'animaux modèle", "modèle promenade de chiens"]
+    match_terms_i18n:
+      pt: ["pet sitter", "passeador de cães", "passeador de cachorro", "creche para cães", "negócio pet"]
+      es: ["cuidador de mascotas", "paseador de perros", "guardería canina", "negocio de mascotas"]
+      de: ["hundesitter", "hundesitting", "gassi service", "tiersitter", "hundebetreuung"]
+      fr: ["pet sitter", "garde d'animaux", "promenade de chiens", "promeneur de chiens"]
+  pet_care_planner:
+    queries_i18n:
+      pt: ["planner pet imprimível", "planilha de gastos com pet"]
+      es: ["planificador mascotas imprimible", "registro de gastos de mascotas"]
+      de: ["Haustier Planer Vorlage", "Haustier Ausgaben Tabelle"]
+      fr: ["planificateur animaux imprimable", "suivi dépenses animaux"]
+    match_terms_i18n:
+      pt: ["planner pet", "planilha pet", "gastos com pet", "caderneta do pet"]
+      es: ["planificador mascotas", "agenda de mascotas", "gastos de mascotas"]
+      de: ["haustier planer", "haustier ausgaben", "tierplaner"]
+      fr: ["planificateur animaux", "carnet animal", "dépenses animaux"]
+  study_planner:
+    queries_i18n:
+      pt: ["planner de estudos imprimível", "cronograma de estudos modelo"]
+      es: ["planificador de estudios imprimible", "horario de estudio plantilla"]
+      de: ["Lernplaner Vorlage", "Lernplan Vorlage"]
+      fr: ["planificateur d'études imprimable", "planning de révision modèle"]
+    match_terms_i18n:
+      pt: ["planner de estudos", "cronograma de estudos", "planejador de estudos"]
+      es: ["planificador de estudios", "horario de estudio", "planner de estudio"]
+      de: ["lernplaner", "lernplan", "studienplaner"]
+      fr: ["planificateur d'études", "planning de révision", "agenda étudiant"]
+  tutoring_business_kit:
+    queries_i18n:
+      pt: ["kit para professor particular modelo", "planilha aulas particulares"]
+      es: ["plantilla profesor particular", "plantilla clases particulares"]
+      de: ["Nachhilfe Vorlage", "Nachhilfelehrer Vertrag Vorlage"]
+      fr: ["modèle cours particuliers", "kit professeur particulier"]
+    match_terms_i18n:
+      pt: ["professor particular", "aulas particulares", "reforço escolar"]
+      es: ["profesor particular", "clases particulares"]
+      de: ["nachhilfe", "nachhilfelehrer"]
+      fr: ["cours particuliers", "professeur particulier"]
+  caregiver_handover:
+    queries_i18n:
+      pt: ["pasta do cuidador de idosos imprimível", "ficha de cuidados emergência modelo"]
+      es: ["carpeta cuidador de mayores imprimible", "ficha de emergencia familiar plantilla"]
+      de: ["Pflege Ordner Vorlage", "Notfallmappe Vorlage"]
+      fr: ["classeur aidant familial imprimable", "fiche urgence famille modèle"]
+    match_terms_i18n:
+      pt: ["cuidador de idosos", "cuidador familiar", "pasta do cuidador"]
+      es: ["cuidador de mayores", "cuidador familiar", "carpeta del cuidador"]
+      de: ["pflege ordner", "notfallmappe", "pflegende angehörige"]
+      fr: ["aidant familial", "classeur aidant", "fiche urgence"]
+  habit_tracker:
+    queries_i18n:
+      pt: ["rastreador de hábitos imprimível", "planner de autocuidado"]
+      es: ["registro de hábitos imprimible", "planificador autocuidado"]
+      de: ["Habit Tracker Vorlage", "Selfcare Planer Vorlage"]
+      fr: ["suivi d'habitudes imprimable", "planificateur bien-être"]
+    match_terms_i18n:
+      pt: ["rastreador de hábitos", "controle de hábitos", "planner de autocuidado"]
+      es: ["registro de hábitos", "seguimiento de hábitos", "planificador autocuidado"]
+      de: ["habit tracker", "gewohnheitstracker", "selfcare planer"]
+      fr: ["suivi d'habitudes", "habit tracker", "planificateur bien-être"]
+  freelancer_client_kit:
+    queries_i18n:
+      pt: ["modelo de proposta para freelancer", "modelo de orçamento prestador de serviços"]
+      es: ["plantilla propuesta freelance", "plantilla presupuesto autónomo"]
+      de: ["Angebot Vorlage Freelancer", "Kundenonboarding Vorlage"]
+      fr: ["modèle devis freelance", "modèle onboarding client"]
+    match_terms_i18n:
+      pt: ["proposta para freelancer", "orçamento prestador", "modelo de proposta"]
+      es: ["propuesta freelance", "presupuesto autónomo", "plantilla propuesta"]
+      de: ["angebot vorlage", "kundenonboarding", "freelancer vorlage"]
+      fr: ["devis freelance", "onboarding client", "modèle devis"]
+  bookkeeping_spreadsheet:
+    queries_i18n:
+      pt: ["planilha controle financeiro pequeno negócio", "planilha de fluxo de caixa MEI"]
+      es: ["plantilla contabilidad autónomo", "hoja de ingresos y gastos negocio"]
+      de: ["Einnahmen Ausgaben Tabelle Kleinunternehmer", "Buchhaltung Vorlage Excel"]
+      fr: ["tableau recettes dépenses auto-entrepreneur", "modèle comptabilité simple"]
+    match_terms_i18n:
+      pt: ["controle financeiro", "fluxo de caixa", "planilha mei", "pequeno negócio"]
+      es: ["contabilidad autónomo", "ingresos y gastos", "hoja de gastos negocio"]
+      de: ["einnahmen ausgaben", "kleinunternehmer", "buchhaltung vorlage"]
+      fr: ["recettes dépenses", "auto-entrepreneur", "comptabilité simple"]
+  social_content_planner:
+    queries_i18n:
+      pt: ["calendário de conteúdo para instagram modelo", "planner de redes sociais"]
+      es: ["calendario de contenido instagram plantilla", "planificador redes sociales"]
+      de: ["Redaktionsplan Instagram Vorlage", "Social Media Planer Vorlage"]
+      fr: ["calendrier éditorial instagram modèle", "planificateur réseaux sociaux"]
+    match_terms_i18n:
+      pt: ["calendário de conteúdo", "planner de redes sociais", "calendário editorial"]
+      es: ["calendario de contenido", "planificador redes sociales", "calendario editorial"]
+      de: ["redaktionsplan", "social media planer", "contentplaner"]
+      fr: ["calendrier éditorial", "planificateur réseaux sociaux", "calendrier de contenu"]
+  event_planner:
+    queries_i18n:
+      pt: ["planner de casamento imprimível", "checklist de festa modelo"]
+      es: ["planificador de boda imprimible", "checklist de evento plantilla"]
+      de: ["Hochzeitsplaner Vorlage", "Eventplanung Checkliste"]
+      fr: ["planificateur de mariage imprimable", "checklist événement modèle"]
+    match_terms_i18n:
+      pt: ["planner de casamento", "checklist de festa", "organização de casamento"]
+      es: ["planificador de boda", "checklist de evento", "organizador de boda"]
+      de: ["hochzeitsplaner", "eventplanung", "checkliste hochzeit"]
+      fr: ["planificateur de mariage", "checklist événement", "organisation mariage"]
+  home_moving_organizer:
+    queries_i18n:
+      pt: ["checklist de mudança imprimível", "planner de organização da casa"]
+      es: ["checklist de mudanza imprimible", "planificador organización del hogar"]
+      de: ["Umzug Checkliste Vorlage", "Haushaltsplaner Vorlage"]
+      fr: ["checklist déménagement imprimable", "planificateur organisation maison"]
+    match_terms_i18n:
+      pt: ["checklist de mudança", "planner da casa", "organização da casa"]
+      es: ["checklist de mudanza", "organización del hogar", "planificador del hogar"]
+      de: ["umzug checkliste", "haushaltsplaner", "umzugsplaner"]
+      fr: ["checklist déménagement", "organisation maison", "planificateur maison"]
+  budget_planner:
+    queries_i18n:
+      pt: ["planilha de orçamento doméstico", "planner financeiro mensal imprimível"]
+      es: ["plantilla presupuesto familiar", "planificador presupuesto mensual"]
+      de: ["Haushaltsbuch Vorlage", "Budgetplaner Vorlage"]
+      fr: ["tableau budget familial", "planificateur budget mensuel"]
+    match_terms_i18n:
+      pt: ["orçamento doméstico", "planner financeiro", "controle de gastos"]
+      es: ["presupuesto familiar", "presupuesto mensual", "control de gastos"]
+      de: ["haushaltsbuch", "budgetplaner", "monatsbudget"]
+      fr: ["budget familial", "budget mensuel", "suivi des dépenses"]
+  family_routine_planner:
+    queries_i18n:
+      pt: ["planner de rotina familiar imprimível", "quadro de tarefas infantil"]
+      es: ["planificador rutina familiar imprimible", "tabla de tareas niños"]
+      de: ["Familienplaner Vorlage", "Aufgabenplan Kinder Vorlage"]
+      fr: ["planificateur famille imprimable", "tableau de tâches enfants"]
+    match_terms_i18n:
+      pt: ["rotina familiar", "quadro de tarefas", "planner da família"]
+      es: ["rutina familiar", "tabla de tareas", "planificador familiar"]
+      de: ["familienplaner", "aufgabenplan", "wochenplan familie"]
+      fr: ["planificateur famille", "tableau de tâches", "routine familiale"]

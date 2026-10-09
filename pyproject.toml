@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "offer-scout"
+version = "0.1.0"
+description = "Agent 1 (Scout) of the low-ticket offer system: collect, normalize, score and hand off market opportunities"
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6"]
+
+[project.optional-dependencies]
+live = ["requests>=2.31"]
+
+[project.scripts]
+offer-scout = "offer_scout.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

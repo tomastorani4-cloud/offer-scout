@@ -1,0 +1,71 @@
+# Offer Scout settings. All thresholds mirror the Scout v2 prompt.
+run:
+  countries: [US, GB, CA, AU, BR, DE, FR, ES]
+  language: English
+  categories: [pets, education, non_clinical_wellness, small_business, creator_tools, planning_lifestyle]
+  price_range_usd: {min: 9, max: 49}
+  max_results_per_category: 100
+  min_opportunity_score: 65
+  max_finalists_per_run: 10
+  max_offers_to_model: 3
+  lookback_days: 90
+
+governance:            # Scout never publishes or spends. Keep these false.
+  require_human_approval: true
+  auto_publish: false
+  auto_launch_ads: false
+
+sources:
+  etsy_api:            # Official Etsy Open API v3. Needs approved key. NOT live-tested.
+    enabled: false
+    api_key_env: ETSY_API_KEY
+    min_interval_s: 0.4
+    review_lookup_top_n: 30
+  meta_ad_library:     # Official Graph API ads_archive. NOT live-tested. See README coverage note.
+    enabled: false
+    token_env: META_AD_LIBRARY_TOKEN
+    api_version: v21.0
+    min_interval_s: 1.0
+  csv_import:          # Operator exports (Ad Library UI, trends exports, vendor tools)
+    enabled: false
+    paths: []
+    inbox_dir: data/inbox   # scheduled runs (--auto) load every *.csv dropped here
+  synthetic:           # SIMULATED data for demos and tests. Never use for decisions.
+    enabled: false
+    seed: 7
+
+# Placeholder FX rates. Update before live use; used only to normalize observed prices.
+fx_rates_to_usd: {USD: 1.0, GBP: 1.27, CAD: 0.73, AUD: 0.65, EUR: 1.08, BRL: 0.18}
+
+scoring:
+  price_floor_penalty_below_usd: 5
+  saturation_min_records: 10
+  saturation_similarity: 0.7
+  saturation_share: 0.5
+
+storage:
+  db_path: data/offer_scout.db
+  out_dir: out
+
+# Language-markets. Evidence is grouped by the language of the query/market; `region` is how ideas are presented.
+markets:
+  en: {label: "EUA e mercados em inglês", region: US, countries: [US, GB, CA, AU], currency: USD}
+  pt: {label: "Brasil", region: BR, countries: [BR], currency: BRL}
+  de: {label: "Alemanha", region: EUROPE, countries: [DE], currency: EUR}
+  fr: {label: "França", region: EUROPE, countries: [FR], currency: EUR}
+  es: {label: "Espanha", region: EUROPE, countries: [ES], currency: EUR}
+
+market_ideas:
+  min_source_sellers: 5        # a market counts as proven supply/demand evidence at this many distinct sellers
+  thin_target_sellers: 2       # at or below this the target market looks under-served (needs coverage proof)
+  min_coverage_records: 20     # records returned for that market in the whole run, proving the source works there
+  # Regulatory/commercial notes are reminders to VERIFY with a local accountant/lawyer, not legal advice.
+  notes:
+    BR: ["Cobrança em BRL; Pix e boleto são comuns no checkout local (verifique no seu provedor)",
+         "Compras a distância têm direito de arrependimento de 7 dias (CDC); confirme como se aplica a produto digital",
+         "LGPD se coletar dados de clientes", "Plataformas locais comuns: Hotmart, Kiwify, Eduzz (confirme tarifas e termos)"]
+    US: ["Cobrança em USD; imposto sobre vendas de produtos digitais varia por estado (verifique com contador)",
+         "Marketplaces comuns: Etsy, Gumroad, Payhip, Shopify"]
+    EUROPE: ["IVA de produtos digitais é do país do cliente (regime OSS); um Merchant of Record pode cuidar disso, confirme custos",
+             "Direito de arrependimento de 14 dias, com exceção para conteúdo digital com consentimento expresso",
+             "GDPR para dados de clientes", "Idiomas: um produto por idioma (alemão, francês, espanhol)"]

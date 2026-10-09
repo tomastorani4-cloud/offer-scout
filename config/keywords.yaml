@@ -1,0 +1,224 @@
+# Taxonomy: category -> subcategory. Queries drive collection; match_terms drive classification.
+# `attrs` are ANALYST PRIORS (0-5, reviewed by a human). The scorer reports them separately
+# from data-driven points so a dashboard can show how much of a score is evidence vs judgement.
+categories:
+  pets:
+    pet_business_kit:
+      queries: ["pet sitter business template", "dog walker client template", "dog walking business spreadsheet", "pet sitting service agreement"]
+      match_terms: ["pet sitter", "pet sitting", "dog walker", "dog walking", "dog boarding", "pet business", "pet care business"]
+      target_customer: "New or small independent pet sitters and dog walkers"
+      core_problem: "Looking professional and staying organized (contracts, intake, bookings, payments, client updates) without building systems from scratch"
+      promise_category: "look professional and organize the business"
+      mechanism_category: "editable spreadsheet plus printable forms bundle"
+      deliverable_vocab: ["contract", "agreement", "intake", "booking", "invoice", "mileage", "report card", "flyer", "website", "tracker", "spreadsheet"]
+      market_gaps: ["CA and AU localization", "cat-only and multi-pet home-visit sitters", "client communication bundled with back-office tracking"]
+      attrs: {specific_problem: 4, identifiable_audience: 5, demonstrable: 4, auto_delivery: 5, derivatives: 5, support_load: 4, marginal_cost: 5, upsell_potential: 4, underserved_segment: 3, specific_application: 2, ux_improvable: 2, bundle_original: 1, platform_dependent: false}
+    pet_health_record:
+      queries: ["pet health record printable", "dog vaccination record template", "vet visit log printable"]
+      match_terms: ["health record", "vaccination", "vet visit", "vet log", "medical record", "vaccine"]
+      target_customer: "Dog and cat owners, new pet adopters"
+      core_problem: "Keeping vaccination dates, vet visits and notes in one place"
+      promise_category: "organization of pet records"
+      mechanism_category: "printable PDF or spreadsheet"
+      deliverable_vocab: ["vaccination", "vet visit", "medication", "emergency", "weight"]
+      market_gaps: []
+      attrs: {specific_problem: 4, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 3, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 0, platform_dependent: false}
+    pet_care_planner:
+      queries: ["pet care planner", "puppy routine planner", "pet expense tracker"]
+      match_terms: ["pet planner", "pet care planner", "puppy planner", "pet organizer", "pet expense", "feeding tracker", "pet binder"]
+      target_customer: "Pet owners wanting routines and expense tracking"
+      core_problem: "Keeping feeding, routine and expenses organized across pets"
+      promise_category: "pet routine organization"
+      mechanism_category: "printable planner or spreadsheet"
+      deliverable_vocab: ["feeding", "routine", "expense", "grooming", "checklist", "sitter"]
+      market_gaps: []
+      attrs: {specific_problem: 3, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 4, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+  education:
+    study_planner:
+      queries: ["study planner", "exam revision planner", "student dashboard"]
+      match_terms: ["study planner", "revision planner", "student planner", "homework planner", "student dashboard"]
+      target_customer: "Students organizing study and revision"
+      core_problem: "Planning study time and tracking revision without overload"
+      promise_category: "study organization"
+      mechanism_category: "planner or dashboard template"
+      deliverable_vocab: ["weekly", "revision", "tracker", "timetable", "goal"]
+      market_gaps: []
+      attrs: {specific_problem: 3, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 4, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    tutoring_business_kit:
+      queries: ["tutoring business template", "tutor client intake form", "course creator template"]
+      match_terms: ["tutoring", "tutor ", "course creator", "lesson plan", "teacher resource"]
+      target_customer: "Independent tutors and course creators"
+      core_problem: "Running scheduling, client intake and lesson tracking professionally"
+      promise_category: "professional tutoring operations"
+      mechanism_category: "forms and tracker bundle"
+      deliverable_vocab: ["intake", "schedule", "lesson", "invoice", "progress"]
+      market_gaps: []
+      attrs: {specific_problem: 4, identifiable_audience: 5, demonstrable: 4, auto_delivery: 5, derivatives: 5, support_load: 4, marginal_cost: 5, upsell_potential: 4, underserved_segment: 2, specific_application: 2, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+  non_clinical_wellness:
+    caregiver_handover:
+      queries: ["caregiver binder printable", "caregiver handover notes", "emergency information organizer"]
+      match_terms: ["caregiver", "elder care", "senior care", "handover", "care binder", "emergency binder"]
+      target_customer: "Family caregivers managing care for an older relative"
+      core_problem: "Keeping contacts, routines, appointments and emergency information in one place and handing over to another person"
+      promise_category: "organization and handover during care"
+      mechanism_category: "printable binder or fillable PDF"
+      deliverable_vocab: ["daily log", "contacts", "emergency", "handover", "appointment", "insurance"]
+      market_gaps: ["sandwich-generation caregivers", "long-distance caregivers coordinating siblings", "respite helper handover"]
+      requires_human_review: true
+      attrs: {specific_problem: 4, identifiable_audience: 5, demonstrable: 4, auto_delivery: 5, derivatives: 4, support_load: 4, marginal_cost: 5, upsell_potential: 3, underserved_segment: 3, specific_application: 2, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    special_needs_family_organizer:
+      queries: ["special needs binder printable", "family appointment organizer", "visual schedule printable"]
+      match_terms: ["special needs binder", "iep", "visual schedule", "care binder for child", "family appointment"]
+      target_customer: "Parents and caregivers coordinating school, appointments and daily routines for a child with additional needs"
+      core_problem: "Keeping school meeting notes, appointment details and routines organized and shareable with professionals"
+      promise_category: "organization and sharing of information with professionals"
+      mechanism_category: "printable binder or fillable PDF"
+      deliverable_vocab: ["appointment", "meeting notes", "routine", "contacts", "questions for"]
+      market_gaps: ["meeting-prep and question lists", "handover sheets for respite carers or relatives"]
+      requires_human_review: true
+      attrs: {specific_problem: 4, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 4, support_load: 3, marginal_cost: 5, upsell_potential: 3, underserved_segment: 3, specific_application: 3, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    medical_info_organizer:
+      queries: ["medical information organizer printable", "family health binder template", "doctor visit notes printable"]
+      match_terms: ["medical binder", "health binder", "medical information", "doctor visit", "health organizer"]
+      target_customer: "Adults organizing appointments and information for themselves or family"
+      core_problem: "Keeping appointment notes and contact information organized to share with professionals"
+      promise_category: "organization of appointments and information"
+      mechanism_category: "printable binder"
+      deliverable_vocab: ["appointment", "contacts", "questions", "insurance"]
+      market_gaps: []
+      requires_human_review: true
+      attrs: {specific_problem: 3, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 3, support_load: 4, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 0, platform_dependent: false}
+    habit_tracker:
+      queries: ["habit tracker printable", "wellness planner", "self care planner"]
+      match_terms: ["habit tracker", "wellness planner", "self care", "self-care", "hydration tracker", "sleep journal"]
+      target_customer: "General consumers building routines"
+      core_problem: "Building routines and staying organized"
+      promise_category: "routine organization"
+      mechanism_category: "planner or tracker"
+      deliverable_vocab: ["habit", "weekly", "hydration", "sleep", "gratitude"]
+      market_gaps: []
+      attrs: {specific_problem: 2, identifiable_audience: 2, demonstrable: 4, auto_delivery: 5, derivatives: 3, support_load: 5, marginal_cost: 5, upsell_potential: 2, underserved_segment: 0, specific_application: 0, ux_improvable: 1, bundle_original: 0, platform_dependent: false}
+  small_business:
+    freelancer_client_kit:
+      queries: ["freelancer proposal template", "client onboarding template", "freelance invoice template"]
+      match_terms: ["freelancer", "client onboarding", "proposal template", "invoice template", "client intake"]
+      target_customer: "Freelancers and solo service providers"
+      core_problem: "Looking professional with proposals, onboarding and invoicing without building documents from scratch"
+      promise_category: "professional client operations"
+      mechanism_category: "editable document and form bundle"
+      deliverable_vocab: ["proposal", "onboarding", "invoice", "intake", "contract", "questionnaire"]
+      market_gaps: []
+      requires_human_review: true   # contract wording is jurisdiction-specific; must not be presented as legal advice
+      attrs: {specific_problem: 4, identifiable_audience: 5, demonstrable: 4, auto_delivery: 5, derivatives: 5, support_load: 4, marginal_cost: 5, upsell_potential: 4, underserved_segment: 2, specific_application: 2, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    bookkeeping_spreadsheet:
+      queries: ["small business bookkeeping spreadsheet", "income and expense tracker spreadsheet", "self employed tax tracker template"]
+      match_terms: ["bookkeeping", "income and expense", "expense tracker", "self employed", "profit and loss template"]
+      target_customer: "Sole proprietors and small shops tracking income and expenses"
+      core_problem: "Tracking income, expenses and invoices in one place without accounting software"
+      promise_category: "financial record keeping"
+      mechanism_category: "spreadsheet template"
+      deliverable_vocab: ["income", "expense", "invoice", "monthly", "dashboard", "mileage"]
+      market_gaps: []
+      requires_human_review: true   # record keeping only; no tax or investment advice
+      attrs: {specific_problem: 4, identifiable_audience: 4, demonstrable: 5, auto_delivery: 5, derivatives: 4, support_load: 3, marginal_cost: 5, upsell_potential: 4, underserved_segment: 2, specific_application: 2, ux_improvable: 2, bundle_original: 1, platform_dependent: false}
+  creator_tools:
+    social_content_planner:
+      queries: ["social media content calendar template", "instagram content planner template"]
+      match_terms: ["content calendar", "content planner", "social media planner", "instagram planner"]
+      target_customer: "Small businesses and creators planning posts"
+      core_problem: "Planning and batching social posts consistently"
+      promise_category: "content planning organization"
+      mechanism_category: "calendar and planner template"
+      deliverable_vocab: ["calendar", "caption", "idea", "hashtag", "canva", "notion"]
+      market_gaps: []
+      attrs: {specific_problem: 3, identifiable_audience: 3, demonstrable: 5, auto_delivery: 5, derivatives: 5, support_load: 5, marginal_cost: 5, upsell_potential: 4, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: true}
+    notion_template:
+      queries: ["notion template planner", "notion business dashboard template"]
+      match_terms: ["notion template", "notion planner", "notion dashboard"]
+      target_customer: "Notion users organizing work or life"
+      core_problem: "Starting from a ready-made, well-structured workspace"
+      promise_category: "workspace organization"
+      mechanism_category: "Notion template"
+      deliverable_vocab: ["dashboard", "database", "tracker", "planner"]
+      market_gaps: []
+      attrs: {specific_problem: 3, identifiable_audience: 3, demonstrable: 5, auto_delivery: 5, derivatives: 5, support_load: 4, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: true}
+  planning_lifestyle:
+    event_planner:
+      queries: ["wedding planner printable", "event planning checklist template"]
+      match_terms: ["wedding planner", "event planning", "party planner", "wedding checklist"]
+      target_customer: "People planning weddings, parties and events"
+      core_problem: "Keeping tasks, vendors and budgets organized for an event"
+      promise_category: "event organization"
+      mechanism_category: "printable planner or checklist"
+      deliverable_vocab: ["checklist", "budget", "vendor", "timeline", "guest"]
+      market_gaps: []
+      attrs: {specific_problem: 4, identifiable_audience: 4, demonstrable: 5, auto_delivery: 5, derivatives: 4, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    home_moving_organizer:
+      queries: ["moving checklist printable", "home organization planner"]
+      match_terms: ["moving checklist", "moving planner", "home organization", "home planner", "declutter"]
+      target_customer: "People moving house or organizing their home"
+      core_problem: "Keeping tasks, boxes and addresses organized during a move"
+      promise_category: "home and moving organization"
+      mechanism_category: "printable checklist and planner"
+      deliverable_vocab: ["checklist", "inventory", "timeline", "address", "budget"]
+      market_gaps: []
+      attrs: {specific_problem: 4, identifiable_audience: 4, demonstrable: 4, auto_delivery: 5, derivatives: 3, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+    budget_planner:
+      queries: ["monthly budget planner spreadsheet", "household budget template"]
+      match_terms: ["budget planner", "budget template", "household budget", "monthly budget"]
+      target_customer: "Households tracking monthly spending"
+      core_problem: "Seeing income and spending in one place"
+      promise_category: "spending record keeping"
+      mechanism_category: "spreadsheet or printable"
+      deliverable_vocab: ["income", "expense", "savings", "monthly", "tracker"]
+      market_gaps: []
+      requires_human_review: true   # tracking only; no investment, debt or tax advice
+      attrs: {specific_problem: 3, identifiable_audience: 3, demonstrable: 5, auto_delivery: 5, derivatives: 4, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 1, specific_application: 1, ux_improvable: 1, bundle_original: 0, platform_dependent: false}
+    family_routine_planner:
+      queries: ["family routine planner printable", "kids chore chart printable"]
+      match_terms: ["family planner", "chore chart", "family routine", "kids routine", "family organizer"]
+      target_customer: "Parents organizing household routines"
+      core_problem: "Keeping school, chores and activities organized across a family"
+      promise_category: "family routine organization"
+      mechanism_category: "printable planner"
+      deliverable_vocab: ["chore", "schedule", "meal", "calendar", "routine"]
+      market_gaps: []
+      attrs: {specific_problem: 3, identifiable_audience: 4, demonstrable: 5, auto_delivery: 5, derivatives: 4, support_load: 5, marginal_cost: 5, upsell_potential: 3, underserved_segment: 2, specific_application: 1, ux_improvable: 1, bundle_original: 1, platform_dependent: false}
+  # Prohibited niches: discovered so the dashboard can show WHY they were rejected. Never modeled.
+  blocked:
+    autism_nutrition_intervention:
+      queries: ["autism diet plan", "gluten free casein free autism"]
+      match_terms: ["autism diet", "gfcf", "autism nutrition"]
+      blocked: true
+      blocked_reason: "Dietary or supplement interventions for a health condition are clinical/nutritional guidance and unproven-claim territory. Out of scope."
+      attrs: {}
+    supplement_protocols:
+      queries: ["supplement protocol"]
+      match_terms: ["supplement", "detox"]
+      blocked: true
+      blocked_reason: "Supplements with health claims are out of scope."
+      attrs: {}
+    weight_loss_plans:
+      queries: ["weight loss plan"]
+      match_terms: ["weight loss", "lose weight"]
+      blocked: true
+      blocked_reason: "Weight-loss products are out of scope."
+      attrs: {}
+    get_rich_financial_claims:
+      queries: ["trading signals course", "make money online fast"]
+      match_terms: ["trading signals", "get rich", "forex", "passive income guaranteed", "make money online fast"]
+      blocked: true
+      blocked_reason: "Income, trading or investment promises are financial-claim territory. Out of scope."
+      attrs: {}
+    gambling_adult:
+      queries: ["betting tips"]
+      match_terms: ["betting tips", "casino", "sports betting", "nsfw"]
+      blocked: true
+      blocked_reason: "Gambling and adult content are out of scope."
+      attrs: {}
+    piracy_hacking:
+      queries: ["cracked software"]
+      match_terms: ["cracked", "pirated", "keygen"]
+      blocked: true
+      blocked_reason: "Piracy and hacking tools are out of scope."
+      attrs: {}

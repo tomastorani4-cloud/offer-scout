@@ -1,0 +1,316 @@
+# Rule-based compliance screen applied to every record (title + description + tags).
+# Patterns cover en, pt, es, de, fr. A record whose market language is NOT in supported_languages is rejected
+# (fail closed) because the screen cannot vet it. Add patterns for a language BEFORE adding it to supported_languages.
+# kind: "any" = any pattern matches. kind: "all_of" = every group must match somewhere in the text.
+# effect: hard_reject drops the record from evidence; soft only flags it.
+rules:
+- id: clinical_claim
+  risk: health_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \bcures?\b
+  - \bcured\b
+  - \btreatments?\b
+  - \btreating\b
+  - \bdiagnos\w*
+  - \btherap(y|eutic|ies)\b
+  - \bheal(s|ing)?\b
+  - \bdetox\w*
+  - \bprevents?\b (?:disease|illness|cancer)
+  - \bcura\b
+  - \bcurar\b
+  - \btratamentos?\b
+  - \bdiagn[oó]stic\w*
+  - \bterapi\w*
+  - \bheilung\b
+  - \bheilen\b
+  - \bbehandlung\w*
+  - \bdiagnose\b
+  - \btherapie\b
+  - \bgu[eé]ri(r|son)\b
+  - \btraitement\w*
+  - \bth[eé]rapie\b
+  - \bcuraci[oó]n\b
+  - \btratamiento\w*
+- id: supplement_or_weight_loss
+  risk: health_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \bsupplements?\b
+  - \bweight[ -]?loss\b
+  - \blose weight\b
+  - \bfat[ -]?burn\w*
+  - \bslimming\b
+  - \bsuplement\w*
+  - \bemagrec\w*
+  - \bperda de peso\b
+  - \bqueima de gordura\b
+  - \badelgaz\w*
+  - \bp[eé]rdida de peso\b
+  - \bquemagrasas?\b
+  - \bnahrungserg[aä]nzung\w*
+  - \babnehm\w*
+  - \bgewichtsverlust\b
+  - \bfatburner\b
+  - \bcompl[eé]ments? alimentaires?\b
+  - \bminceur\b
+  - \bperte de poids\b
+  - \bbr[uû]le[- ]graisses?\b
+- id: dietary_intervention_for_condition
+  risk: health_risk
+  level: high
+  effect: hard_reject
+  assign_subcategory: autism_nutrition_intervention
+  kind: all_of
+  groups:
+  - - \bautis\w*
+    - \basd\b
+    - \badhd\b
+    - \bspecial needs\b
+  - - \bdiet\b
+    - \bnutrition\w*
+    - \bgluten\b
+    - \bcasein\b
+    - \bgfcf\b
+    - \bvitamins?\b
+    - \bsupplements?\b
+    - \bfeeding therapy\b
+    - \bmeal plan\b
+    - \bdieta\b
+    - \bnutri[cç]\w*
+    - \bgl[uú]ten\b
+    - \bca[ií]na\b
+    - \bdi[eè]te\b
+    - \bern[aä]hrung\b
+    - \br[eé]gime\b
+    - \bpl[aá]n alimenti\w*
+    - \bcard[aá]pio\b
+- id: therapeutic_diet
+  risk: health_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \btherapeutic diet\b
+  - \belimination diet\b
+  - \banti-inflammatory diet\b
+  - \bketogenic\b
+  - \bgluten[ -]free\b
+  - \bcasein[ -]free\b
+  - \bgfcf\b
+  - \bsem gl[uú]ten\b
+  - \bdieta cetog\w*
+  - \bglutenfrei\b
+  - \bsans gluten\b
+  - \bsin gluten\b
+  - \banti-?inflamat[oó]ria\b
+- id: condition_specific_scope_out
+  risk: health_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \bcancer\b
+  - \bchemo\w*
+  - \bdementia\b
+  - \balzheimer\w*
+  - \bchronic illness\b
+  - \bdiabet\w*
+  - \bblood sugar\b
+  - \bblood pressure\b
+  - \beating disorder\b
+  - \bsuicid\w*
+  - \bself[ -]harm\b
+  - \bsobriety\b
+  - \baddiction\b
+  - \bc[aâá]ncer\b
+  - \bquimio\w*
+  - \bdem[eê]ncia\b
+  - \bdemencia\b
+  - \bdiabet\w*
+  - \bpress[aã]o arterial\b
+  - \bpresi[oó]n arterial\b
+  - \btranstornos? alimentar\w*
+  - \btrastornos? alimentari\w*
+  - \bsuic[ií]d\w*
+  - \bautoles\w*
+  - \bautolesi\w*
+  - \bkrebs\b
+  - \bdemenz\b
+  - \bblutdruck\b
+  - \bessst[oö]rung\w*
+  - \bsuizid\w*
+  - \bselbstverletz\w*
+  - \bd[eé]mence\b
+  - \bdiab[eè]te\b
+  - \btroubles? alimentaires?\b
+  - \bautomutil\w*
+- id: condition_adjacent
+  risk: health_risk
+  level: low
+  effect: soft
+  kind: any
+  patterns:
+  - \badhd\b
+  - \bautis\w*
+  - \banxiety\b
+  - \bdepress\w*
+  - \bmental health\b
+  - \bperimenopaus\w*
+  - \bpcos\b
+  - \bsymptoms?\b
+  - \bmedications?\b
+  - \bansiedade\b
+  - \bansiedad\b
+  - \bangst\b
+  - \banxi[eé]t[eé]\b
+  - \btdah\b
+  - \bdepress[aã]o\b
+  - \bdepresi[oó]n\b
+- id: veterinary_clinical
+  risk: veterinary_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \b(dog|cat|pet|puppy|kitten)\b.{0,60}\b(dosage|dose|cure|diagnos\w*|remed(y|ies))\b
+  - \b(dosage|dose|cure|diagnos\w*|remed(y|ies))\b.{0,60}\b(dog|cat|pet|puppy|kitten)\b
+  - \bhome remed(y|ies)\b
+  - \b(cachorro|c[aã]o|gato|cachorros|mascota|perro|hund|katze|haustier|chien|chat|animal)\b.{0,60}\b(dosagem|dosis|dosierung|posologie|cura|heilung|gu[eé]rison|diagn[oó]stic\w*|rem[eé]dio caseiro|hausmittel)\b
+  - \b(dosagem|dosis|dosierung|posologie|heilung|gu[eé]rison|rem[eé]dio caseiro|hausmittel)\b.{0,60}\b(cachorro|c[aã]o|gato|mascota|perro|hund|katze|haustier|chien|chat)\b
+- id: academic_fraud
+  risk: academic_integrity_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \bbypass\w*.{0,30}(turnitin|detector)
+  - \bundetectable\b
+  - \banswer keys?\b
+  - \btest bank\b
+  - \bexam answers\b
+  - \bdo my homework\b
+  - \bghostwrit\w*
+  - \bcheat\w*
+  - \bgabaritos?\b
+  - \bcolar em prova\b
+  - \btcc pronto\b
+  - \btrabalho pronto\b
+  - \bindetect\w*
+  - \bhacer tu tarea\b
+  - \brespuestas de examen\b
+  - \bhausarbeit schreiben lassen\b
+  - \bunerkennbar\b
+  - \btricher\b
+  - \bind[eé]tectable\b
+- id: unproven_claim
+  risk: claims
+  level: soft
+  effect: soft
+  kind: any
+  patterns:
+  - \bguaranteed\b
+  - \bproven\b
+  - \bmiracle\b
+  - \b100% (results|success)\b
+  - \bclinically\b
+  - \bdoctor[ -]approved\b
+  - \bpass (your )?exam
+  - \bgarantid[oa]s?\b
+  - \bmilagre\b
+  - \bresultado garantido\b
+  - \bgarantizad[oa]s?\b
+  - \bmilagro\b
+  - \bgarantiert\b
+  - \bwunder\b
+  - \bgarantie? \b
+  - \bmiracle\b
+  - \bcomprovado cientificamente\b
+- id: ip_brand
+  risk: ip_risk
+  level: high
+  effect: hard_reject
+  kind: any
+  patterns:
+  - \bdisney\b
+  - \bmarvel\b
+  - \bpixar\b
+  - \bpok[eé]mon\b
+  - \bnintendo\b
+  - \bharry potter\b
+  - \bstar wars\b
+  - \bhello kitty\b
+  - \bbluey\b
+  - \btaylor swift\b
+  - \bnfl\b
+  - \bnba\b
+- id: financial_promise
+  risk: claims
+  level: high
+  effect: hard_reject
+  assign_subcategory: get_rich_financial_claims
+  kind: any
+  patterns:
+  - \bget rich\b
+  - \bpassive income\b.{0,40}\bguarantee\w*
+  - \bforex\b
+  - \btrading signals?\b
+  - \bbinary options?\b
+  - \bcrypto (signals|trading course)\b
+  - \bmake \$?\d+.{0,20}(per day|a day|overnight)
+  - \benriquec\w+
+  - \brenda extra garantida\b
+  - \bganhar dinheiro r[aá]pido\b
+  - \bsinais de trading\b
+  - \bday ?trade\b
+  - \bop[cç][oõ]es bin[aá]rias\b
+  - \bhazte rico\b
+  - \bingresos pasivos garantizados\b
+  - \bse[ñn]ales de trading\b
+  - \breich werden\b
+  - \bschnell geld verdienen\b
+  - \btrading signale\b
+  - \bdevenir riche\b
+  - \bgagner de l.argent rapidement\b
+  - \bsignaux de trading\b
+- id: gambling_adult
+  risk: claims
+  level: high
+  effect: hard_reject
+  assign_subcategory: gambling_adult
+  kind: any
+  patterns:
+  - \bbetting tips\b
+  - \bcasino\b
+  - \bsports? betting\b
+  - \bnsfw\b
+  - \bonlyfans\b
+  - \bapostas esportivas\b
+  - \bcassino\b
+  - \bjogo do tigrinho\b
+  - \bapuestas deportivas\b
+  - \bsportwetten\b
+  - \bparis sportifs\b
+- id: piracy_hacking
+  risk: claims
+  level: high
+  effect: hard_reject
+  assign_subcategory: piracy_hacking
+  kind: any
+  patterns:
+  - \bcracked\b
+  - \bpirated\b
+  - \bkeygen\b
+  - \bhack(ing)? (instagram|account|wifi)\b
+  - \bcrackeado\b
+  - \bpirateado\b
+supported_languages:
+- en
+- pt
+- es
+- de
+- fr
